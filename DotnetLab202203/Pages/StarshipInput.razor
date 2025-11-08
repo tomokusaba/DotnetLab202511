@@ -1,0 +1,87 @@
+﻿@page "/starship"
+@using StarshipModel = DotnetLab202203.Models.Starship
+@using DestinationModel = DotnetLab202203.Models.ShipDestination
+
+<PageTitle>Starship</PageTitle>
+
+<h1>Starship入力</h1>
+
+<EditForm Model="starship" OnValidSubmit="AddStarship">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-2">
+        <label>名前</label>
+        <InputText class="form-control" @bind-Value="starship.Name" />
+        <ValidationMessage For="() => starship.Name" />
+    </div>
+    <div class="mb-2">
+        <label>モデル</label>
+        <InputText class="form-control" @bind-Value="starship.Model" />
+        <ValidationMessage For="() => starship.Model" />
+    </div>
+    <div class="mb-2">
+        <label>製造者</label>
+        <InputText class="form-control" @bind-Value="starship.Manufacturer" />
+    </div>
+    <div class="mb-2">
+        <label>クラス</label>
+        <InputText class="form-control" @bind-Value="starship.StarshipClass" />
+    </div>
+
+    <fieldset class="border rounded p-2">
+        <legend class="fs-6">目的地</legend>
+        <div class="mb-2">
+            <label>説明</label>
+            <InputText class="form-control" @bind-Value="starship.Destination!.Description" />
+            <ValidationMessage For="() => starship.Destination!.Description" />
+        </div>
+        <div class="mb-2">
+            <label>惑星</label>
+            <InputText class="form-control" @bind-Value="starship.Destination!.Planet" />
+            <ValidationMessage For="() => starship.Destination!.Planet" />
+        </div>
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary mt-2">追加</button>
+</EditForm>
+
+<h2 class="mt-3">入力結果</h2>
+@if (items.Any())
+{
+    <QuickGrid TGridItem="StarshipModel" Items="@items.AsQueryable()">
+        <PropertyColumn Property="@(s => s.Name)" Title="名前" />
+        <PropertyColumn Property="@(s => s.Model)" Title="モデル" />
+        <PropertyColumn Property="@(s => s.Manufacturer)" Title="製造者" />
+        <PropertyColumn Property="@(s => s.StarshipClass)" Title="クラス" />
+        <TemplateColumn Title="説明">@context.Destination?.Description</TemplateColumn>
+        <TemplateColumn Title="惑星">@context.Destination?.Planet</TemplateColumn>
+    </QuickGrid>
+}
+else
+{
+    <p>まだデータがありません。</p>
+}
+
+@code {
+    private StarshipModel starship = new() { Destination = new DestinationModel() };
+    private List<StarshipModel> items = new();
+
+    private void AddStarship()
+    {
+        var copy = new StarshipModel
+        {
+            Name = starship.Name,
+            Model = starship.Model,
+            Manufacturer = starship.Manufacturer,
+            StarshipClass = starship.StarshipClass,
+            Destination = new DestinationModel
+            {
+                Description = starship.Destination!.Description,
+                Planet = starship.Destination!.Planet
+            }
+        };
+        items.Add(copy);
+        starship = new() { Destination = new DestinationModel() };
+    }
+}
