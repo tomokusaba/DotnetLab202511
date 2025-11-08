@@ -33,13 +33,13 @@
         <legend class="fs-6">目的地</legend>
         <div class="mb-2">
             <label>説明</label>
-            <InputText class="form-control" @bind-Value="starship.Destination!.Description" />
-            <ValidationMessage For="() => starship.Destination!.Description" />
+            <InputText class="form-control" @bind-Value="starship.Destination.Description" />
+            <ValidationMessage For="() => starship.Destination.Description" />
         </div>
         <div class="mb-2">
             <label>惑星</label>
-            <InputText class="form-control" @bind-Value="starship.Destination!.Planet" />
-            <ValidationMessage For="() => starship.Destination!.Planet" />
+            <InputText class="form-control" @bind-Value="starship.Destination.Planet" />
+            <ValidationMessage For="() => starship.Destination.Planet" />
         </div>
     </fieldset>
 
@@ -77,8 +77,8 @@ else
             StarshipClass = starship.StarshipClass,
             Destination = new DestinationModel
             {
-                Description = starship.Destination!.Description,
-                Planet = starship.Destination!.Planet
+                Description = starship.Destination.Description,
+                Planet = starship.Destination.Planet
             }
         };
         items.Add(copy);

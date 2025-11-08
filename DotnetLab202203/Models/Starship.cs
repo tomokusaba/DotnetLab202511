@@ -1,5 +1,9 @@
 ﻿namespace DotnetLab202203.Models;
+
 using System.ComponentModel.DataAnnotations;
+using Microsoft.Extensions.DependencyInjection;
+
+[ValidatableType]
 public class Starship
 {
     [StringLength(50, ErrorMessage = "名前は50文字以下で入力してください。")]
@@ -8,8 +12,8 @@ public class Starship
     public string Model { get; set; } = string.Empty;
     public string Manufacturer { get; set; } = string.Empty;
     public string StarshipClass { get; set; } = string.Empty;
-    [ValidateComplexType]
-    public ShipDestination? Destination { get; set; }
+
+    public ShipDestination Destination { get; set; } = new();
 }
 
 public class ShipDestination
