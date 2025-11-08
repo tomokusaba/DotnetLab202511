@@ -1,0 +1,45 @@
+﻿@DotnetLab202203.Api_HostAddress = https://localhost:54058
+
+GET {{DotnetLab202203.Api_HostAddress}}/api/starship
+
+###
+POST {{DotnetLab202203.Api_HostAddress}}/api/starship
+Content-Type: application/json
+  {
+    "name": "USS Enterprise",
+    "model": "NCC-1701-D",
+    "manufacturer": "Federation Starfleet",
+    "starshipClass": "Galaxy-class",
+    "destination": {
+      "description": "Explore the Alpha Quadrant",
+      "planet": "Earth"
+    }
+  }
+###
+
+POST {{DotnetLab202203.Api_HostAddress}}/api/starship
+Content-Type: application/json
+  {
+    "name": "Millennium Falcon",
+    "model": "YT-1300f",
+    "manufacturer": "Corellian Engineering Corporation",
+    "starshipClass": "Light Freighter",
+    "destination": {
+      "description": "Deliver cargo to Cloud City",
+      "planet": "Bespin aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  }
+###
+
+POST {{DotnetLab202203.Api_HostAddress}}/api/starship
+Content-Type: application/json
+  {
+    "name": "",
+    "model": "YT-1300f",
+    "manufacturer": "Corellian Engineering Corporation",
+    "starshipClass": "Light Freighter",
+    "destination": {
+      "description": "Deliver cargo to Cloud City",
+      "planet": "Bespin aaaaaaaaa"
+    }
+  }

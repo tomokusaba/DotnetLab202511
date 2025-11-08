@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33402.96
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetLab202203", "DotnetLab202203\DotnetLab202203.csproj", "{8A3022EC-A1A8-4B0F-93E8-B9F2628BD4E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetLab202203.Api", "DotnetLab202203.Api\DotnetLab202203.Api.csproj", "{69C2D099-96E2-4738-AF14-A6FF6E26B0AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8A3022EC-A1A8-4B0F-93E8-B9F2628BD4E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A3022EC-A1A8-4B0F-93E8-B9F2628BD4E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A3022EC-A1A8-4B0F-93E8-B9F2628BD4E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69C2D099-96E2-4738-AF14-A6FF6E26B0AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69C2D099-96E2-4738-AF14-A6FF6E26B0AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69C2D099-96E2-4738-AF14-A6FF6E26B0AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69C2D099-96E2-4738-AF14-A6FF6E26B0AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

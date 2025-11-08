@@ -11,33 +11,39 @@
     <ValidationSummary />
 
     <div class="mb-2">
-        <label>名前</label>
+        <label class="form-label">名前</label>
+        <small class="text-muted d-block">艦名やコード名を入力してください (例: NCC-1701)。</small>
         <InputText class="form-control" @bind-Value="starship.Name" />
         <ValidationMessage For="() => starship.Name" />
     </div>
     <div class="mb-2">
-        <label>モデル</label>
+        <label class="form-label">モデル</label>
+        <small class="text-muted d-block">船体モデル番号やシリーズ名を入力します。</small>
         <InputText class="form-control" @bind-Value="starship.Model" />
         <ValidationMessage For="() => starship.Model" />
     </div>
     <div class="mb-2">
-        <label>製造者</label>
+        <label class="form-label">製造者</label>
+        <small class="text-muted d-block">製造した企業や組織名を記載してください。</small>
         <InputText class="form-control" @bind-Value="starship.Manufacturer" />
     </div>
     <div class="mb-2">
-        <label>クラス</label>
+        <label class="form-label">クラス</label>
+        <small class="text-muted d-block">艦種を示す分類名を入力します (例: Explorer)。</small>
         <InputText class="form-control" @bind-Value="starship.StarshipClass" />
     </div>
 
     <fieldset class="border rounded p-2">
         <legend class="fs-6">目的地</legend>
         <div class="mb-2">
-            <label>説明</label>
+            <label class="form-label">説明</label>
+            <small class="text-muted d-block">任務内容や目的地に関する概要を記載してください。</small>
             <InputText class="form-control" @bind-Value="starship.Destination.Description" />
             <ValidationMessage For="() => starship.Destination.Description" />
         </div>
         <div class="mb-2">
-            <label>惑星</label>
+            <label class="form-label">惑星</label>
+            <small class="text-muted d-block">目的地となる惑星名や天体名を入力します。</small>
             <InputText class="form-control" @bind-Value="starship.Destination.Planet" />
             <ValidationMessage For="() => starship.Destination.Planet" />
         </div>
