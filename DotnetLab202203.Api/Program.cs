@@ -32,17 +32,17 @@ app.MapGet("/api/starship/{index:int}", (int index, IStarshipRepository reposito
 
 app.MapPost("/api/starship", (Starship starship, IStarshipRepository repository) =>
 {
-    if (!MinimalValidation.TryValidate(starship, out var errors))
-    {
-        return Results.ValidationProblem(errors);
-    }
+    //if (!MinimalValidation.TryValidate(starship, out var errors))
+    //{
+    //    return Results.ValidationProblem(errors);
+    //}
 
     var index = repository.Add(starship);
     return Results.Created($"/api/starship/{index}", starship);
 })
 .WithName("CreateStarship")
-.Produces<Starship>(StatusCodes.Status201Created)
-.ProducesValidationProblem();
+.Produces<Starship>(StatusCodes.Status201Created);
+//.ProducesValidationProblem();
 
 app.Run();
 

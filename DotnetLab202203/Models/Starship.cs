@@ -1,8 +1,7 @@
 ﻿namespace DotnetLab202203.Models;
 
-using System.ComponentModel.DataAnnotations;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Validation;
+using System.ComponentModel.DataAnnotations;
 
 /// <summary>
 /// 宇宙船の基本情報と目的地情報を表す検証対象モデルです。
